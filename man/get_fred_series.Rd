@@ -4,23 +4,24 @@
 \alias{get_fred_series}
 \title{Get Fred Series}
 \usage{
-get_fred_series(series_id, series_name = NULL,
-  observation_start = NULL, observation_end = NULL)
+get_fred_series(
+  series_id,
+  series_name = NULL,
+  observation_start = NULL,
+  observation_end = NULL
+)
 }
 \arguments{
-\item{series_id}{jj}
+\item{series_id}{FRED time series ID.}
 
-\item{series_name}{jj}
+\item{series_name}{Choose the name for the series column in output dataframe. Default: series_id.}
 
-\item{observation_start}{jj}
+\item{observation_start}{Dtae of the first observation in "yyyy-mm-dd" format. Default: earliest observation avaliable.}
 
-\item{observation_end}{jj}
-}
-\value{
-The output from \code{\link{print}}
+\item{observation_end}{Date of last observation in "yyyy-mm-dd" format. Default: Last observation available.}
 }
 \description{
-Get Fred Series
+This function can pull time series from the FRED database \url{https://fred.stlouisfed.org}.
 }
 \examples{
 \dontrun{

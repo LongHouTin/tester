@@ -1,0 +1,26 @@
+---
+title: "Worst_Vignette_ever"
+author: "Long Hou Tin"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Worst_Vignette_ever}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Installation
+```{r, eval=FALSE}
+install.packages("tester")
+```
+
+## Usage
+```{r}
+library("tester")
+#df<-get_fred_series("INDPRO", "indpro")
+#df_vintages<-get_alfred_series("GDPC1", "rgdp", 
+#                               observation_start = "2007-05-31", 
+#                               realtime_start = "2008-05-31", 
+#                               realtime_end = "2009-03-30")
+```
+

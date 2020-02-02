@@ -1,12 +1,19 @@
 #' Get Fred Series
 #'
-#' @param series_id jj
-#' @param series_name jj
-#' @param observation_start jj
-#' @param observation_end jj
+#' This function can pull time series from the FRED database \url{https://fred.stlouisfed.org}.
 #'
-#' @return The output from \code{\link{print}}
-#' @export
+#' @param series_id FRED time series ID.
+#' @param series_name Choose the name for the series column in output dataframe. Default: series_id.
+#' @param observation_start Dtae of the first observation in "yyyy-mm-dd" format. Default: earliest observation avaliable.
+#' @param observation_end Date of last observation in "yyyy-mm-dd" format. Default: Last observation available.
+#'
+#' @importFrom tibble as_tibble
+#' @importFrom dplyr mutate_
+#' @importFrom dplyr bind_rows
+#' @importFrom lubridate as_date
+#' @importFrom magrittr %>%
+#'
+#' @export get_fred_series
 #'
 #' @examples
 #' \dontrun{

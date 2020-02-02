@@ -4,32 +4,34 @@
 \alias{get_alfred_series}
 \title{Get Alfred Series}
 \usage{
-get_alfred_series(series_id, series_name = NULL,
-  observation_start = NULL, observation_end = NULL,
-  realtime_start = NULL, realtime_end = NULL)
+get_alfred_series(
+  series_id,
+  series_name = NULL,
+  observation_start = NULL,
+  observation_end = NULL,
+  realtime_start = NULL,
+  realtime_end = NULL
+)
 }
 \arguments{
-\item{series_id}{jj}
+\item{series_id}{Fred time sereis ID.}
 
-\item{series_name}{jj}
+\item{series_name}{Choose the name for the series column in output. Default series_id.}
 
-\item{observation_start}{jj}
+\item{observation_start}{Date of the first observation in "yyyy-mm-dd" forma. Default: earliest observation avaliable.}
 
-\item{observation_end}{jj}
+\item{observation_end}{Date of last observation in "yyyy-mm-dd" format. Default: last observation avaliable.}
 
-\item{realtime_start}{jj}
+\item{realtime_start}{Date of first real time period in "yyyy-mm-dd" format. Default: First vintage date avaliable.}
 
-\item{realtime_end}{jj}
-}
-\value{
-The output from \code{\link{print}}
+\item{realtime_end}{Date of last real time period in "yyyy-mm-dd" format. Default: Last vintage date available.}
 }
 \description{
-Get Alfred Series
+This function can pull time series from the ALFRED database: \url{https://alfred.stlouisfed.org}.
 }
 \examples{
 \dontrun{
-get_alfred_series("GDPC1", "rgdp", observation_start = "2007-05-31", realtime_start = "2008-05-31", realtime_end = "2009-03-30")
+get_alfred_series("INDPRO", "indpro", realtime_start = "2008-10-31", realtime_end = "2009-10-31")
 }
 
 }

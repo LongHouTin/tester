@@ -1,19 +1,31 @@
 #' Get Alfred Series
 #'
-#' @param series_id jj
-#' @param series_name jj
-#' @param observation_start jj
-#' @param observation_end jj
-#' @param realtime_start jj
-#' @param realtime_end jj
+#' This function can pull time series from the ALFRED database: \url{https://alfred.stlouisfed.org}.
 #'
-#' @return The output from \code{\link{print}}
-#' @export
+#' @param series_id Fred time sereis ID.
+#' @param series_name Choose the name for the series column in output. Default series_id.
+#' @param observation_start Date of the first observation in "yyyy-mm-dd" forma. Default: earliest observation avaliable.
+#' @param observation_end Date of last observation in "yyyy-mm-dd" format. Default: last observation avaliable.
+#' @param realtime_start Date of first real time period in "yyyy-mm-dd" format. Default: First vintage date avaliable.
+#' @param realtime_end Date of last real time period in "yyyy-mm-dd" format. Default: Last vintage date available.
+#'
+#' @importFrom tibble as_tibble
+#' @importFrom tidyr gather_
+#' @importFrom dplyr mutate_
+#' @importFrom dplyr filter_
+#' @importFrom dplyr mutate_if
+#' @importFrom dplyr bind_rows
+#' @importFrom lubridate as_date
+#' @importFrom magrittr %>%
+#' @importFrom stats na.omit
+#' @importFrom jsonlite fromJSON
+#'
+#' @export get_alfred_series
 #'
 #' @examples
 #' \dontrun{
-#' get_alfred_series("GDPC1", "rgdp", observation_start = "2007-05-31", realtime_start = "2008-05-31", realtime_end = "2009-03-30")
-#'}
+#' get_alfred_series("INDPRO", "indpro", realtime_start = "2008-10-31", realtime_end = "2009-10-31")
+#' }
 #'
 get_alfred_series <-
   function(series_id, series_name = NULL,
