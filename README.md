@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.com/LongHouTin/tester.svg?branch=master)](https://travis-ci.org/LongHouTin/tester)
 <!-- badges: end -->
 
 The goal of tester is to … do something
